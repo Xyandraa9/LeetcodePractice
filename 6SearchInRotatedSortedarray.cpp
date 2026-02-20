@@ -29,3 +29,34 @@ public:
         return -1;
     }
 };
+//min
+while (low < high) {
+    int mid = low + (high - low) / 2;
+
+    if (nums[mid] > nums[high]) {
+        low = mid + 1;
+    } else {
+        high = mid;
+    }
+}
+
+return nums[low];
+
+//duplicates
+
+while (low < high) {
+    int mid = low + (high - low) / 2;
+
+    if (nums[mid] > nums[high]) {
+        low = mid + 1;
+    }
+    else if (nums[mid] < nums[high]) {
+        high = mid;
+    }
+    else {
+        high--;   // duplicate case
+    }
+}
+
+return nums[low];
+
